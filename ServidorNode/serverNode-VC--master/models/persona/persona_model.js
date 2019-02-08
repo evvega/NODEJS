@@ -1,40 +1,89 @@
  class Persona{
-    constructor(Nombre_Persona, Codigo_Persona){
-       this.Nombre_Persona=Nombre_Persona;
-       this.Codigo_Persona=Codigo_Persona; 
+    constructor(nombres, apellidos, edad, telefono_movil, direccion, correo, telefono_local){
+       this.nombres=nombres;
+       this.apellidos=apellidos; 
+       this.edad=edad; 
+       this.telefono_movil=telefono_movil; 
+       this.direccion=direccion; 
+       this.correo=correo;
+       this.telefono_local=telefono_local;
+
     }
 
     getNombre(){
-        return (this.Nombre_Persona);
+        return (this.nombres);
 
     }
 
     setNombre(nombre){
-        this.Nombre_Persona=nombre;
+        this.nombres=nombre;
 
     }
 
-    getCodigo(){
-        return (this.Nombre_Persona);
+    getApellidos(){
+        return (this.apellidos);
 
     }
 
-    setCodigo(codigo){
-        this.Nombre_Codigo=codigo;
+    setApellidos(apellido){
+        this.apellidos=apellido;
+    }
+
+    getEdad(){
+        return (this.edad);
+
+    }
+
+    setEdad(edad){
+        this.edad=edad;
+    }
+
+    getTelefonoMovil(){
+        return (this.telefono_movil);
+
+    }
+
+    setTelefonoMovil(telefono_movil){
+        this.telefono_movil=telefono_movil;
+    }
+    getDireccion(){
+        return (this.direccion);
+
+    }
+
+    setDireccion(direccion){
+        this.direccion=direccion;
+    }
+
+    getCorreo(){
+        return (this.correo);
+
+    }
+
+    setCorreo(correo){
+        this.correo=correo;
+    }
+
+    getTelefonoLocal(){
+        return (this.telefono_local);
+
+    }
+
+    setTelefonoLocal(telefono_local){
+        this.telefono_local=telefono_local;
     }
 
 }
 
-const personaDataBase= new Persona("Stiven Rojas",80865137);
 const con =require("../database")
 const mysql = require ("mysql");
 
-let insertPersonDB=(nombrePersona, codigoPersona)=>{
+let insertPersonDB=(nombre, apellido,edad_per,tele_movil, direcc_per, correo_per, tele_local)=>{
    return new Promise ((resolve,reject)=>{
-       var sql = "INSERT INTO Personas (Nombre_Persona, Codigo_Persona) VALUES ('" + nombrePersona + "', '" +  codigoPersona + "')";
+       var sql = "INSERT INTO Persona (nombres,apellidos, edad, telefono_movil, direccion, correo, telefono_local) VALUES('" + nombre + "', '" +  apellido + "', '"+ edad_per +"', '"+ tele_movil +"', '"+ direcc_per +"', '"+ correo_per +"', '"+ tele_local +"')";
        con.query(sql, (err)=> {
-           if (err){reject(`you was a problem **Nombre:${nombrePersona}- Codigo:${codigoPersona}**`);}
-           resolve(`****The data: Nombre:${nombrePersona}- Codigo:${codigoPersona},  was inserted ****`);
+           if (err){reject(`you was a problem **Nombre:${nombre}- Apellido:${apellido}**`);}
+           resolve(`****The data: Nombre:${nombre}- Apellido:${apellido},  was inserted ****`);
        
      });
      
@@ -43,7 +92,7 @@ let insertPersonDB=(nombrePersona, codigoPersona)=>{
 }
 
 
-let deletePersonDB=(codigoPersona)=>{
+let deletePersonDB=(nombres)=>{
 
 }
 
