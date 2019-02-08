@@ -25,6 +25,8 @@
 
 }
 
+
+
 const personaDataBase= new Persona("Stiven Rojas",80865137);
 const con =require("../database")
 const mysql = require ("mysql");
@@ -45,6 +47,8 @@ let insertPersonDB=(nombrePersona, codigoPersona)=>{
 
 let deletePersonDB=(codigoPersona)=>{
 
+
+    
 }
 
 let consultPersonDB=()=>{

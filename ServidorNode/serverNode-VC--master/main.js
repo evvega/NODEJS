@@ -61,6 +61,7 @@ appServer.use(express.static(path.join(__dirname,'public')));
 appServer.use('/index/public',express.static(path.join(__dirname,'public')));
 appServer.use('/public/post',express.static(path.join(__dirname,'public/public_post')));
 appServer.use('/public/get',express.static(path.join(__dirname,'public/public_get')));
+appServer.use('/public/post_lavanderia',express.static(path.join(__dirname,'public/public_post_lavanderia')));
 //*********************When not find the file ************************ */
 
 appServer.get('*',function(req,res){
