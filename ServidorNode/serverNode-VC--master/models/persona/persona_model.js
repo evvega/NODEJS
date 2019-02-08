@@ -94,6 +94,8 @@ let insertPersonDB=(nombre, apellido,edad_per,tele_movil, direcc_per, correo_per
 
 let deletePersonDB=(nombres)=>{
 
+
+    
 }
 
 let consultPersonDB=()=>{
