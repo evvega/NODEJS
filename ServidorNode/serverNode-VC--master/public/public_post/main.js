@@ -1,6 +1,7 @@
 
 $(document).ready(function(){
     $("button").click(function(){
+        alert("hola");
         $("p").hide();
         var nombre=document.getElementById("nombre").value
         var apellido=document.getElementById("apellido").value
@@ -10,8 +11,8 @@ $(document).ready(function(){
         var correo_per=document.getElementById("correo_per").value
         var tele_local=document.getElementById("tele_local").value
 
-        $.post( "http://localhost:3000/tryPost", {nombres: nombre, apellidos: apellido, edad:edad_per, 
-        telefono_movil:tele_movil,direccion:direcc_per,correo:correo_per, telefono_local:tele_local} );
+        $.post( "http://localhost:3000/tryPost", {nombre: nombre, apellido: apellido, edad_per:edad_per, 
+        tele_movil:tele_movil,direcc_per:direcc_per,correo_per:correo_per, tele_local:tele_local} );
       });
   });
   

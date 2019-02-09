@@ -26,7 +26,23 @@ router.get('/consultarDB', (req,res,next)=>{
 
 
 router.post('/tryPost',(req,res,next)=>{
-    controllers.contrInsertDataPer(req.body.Nombre_Persona, req.body.Codigo_Persona).then(result=>{
+    console.log(req);
+    controllers.contrInsertDataPer(req.body.nombre, req.body.apellido, req.body.edad_per, req.body.tele_movil,
+        req.body.direcc_per, req.body.correo_per, req.body.tele_local).then(result=>{
+        console.log(result)
+    }).catch(err=>{
+        console.log(err)
+    })
+
+
+})
+
+
+router.post('/tryPostLava',(req,res,next)=>{
+    console.log(req);
+    controllers.contrInsertDataLavanderia(req.body.nit_lav, nit.body.razon_social_lav, 
+        nit.body.direccion_lav, req.body.telefono_lav, req.body.latitud_lav, 
+        req.body.longitud_lav,req.body.horario_lav).then(result=>{
         console.log(result)
     }).catch(err=>{
         console.log(err)

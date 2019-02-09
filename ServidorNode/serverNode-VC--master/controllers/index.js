@@ -4,6 +4,7 @@ const appServer=express();
 
 const con =require("../models/database")
 const modelPerson =require("../models/persona/persona_model")
+const modelLavanderia =require("../models/lavanderia/lavanderia_model")
 const path = require("path");
 const static =require ("static");
 
@@ -39,9 +40,22 @@ const dataPet=(req,res,next)=>{
 
     }
 
-const contrInsertDataPer = async(Nombre_Persona,Codigo_Persona)=>{
-     let resultInsertPerson=await modelPerson.insertPersonDB(Nombre_Persona,Codigo_Persona);
+const contrInsertDataPer = async(nombre, apellido,edad_per,tele_movil, direcc_per, correo_per, tele_local)=>{
+     let resultInsertPerson=await modelPerson.insertPersonDB(nombre, apellido,edad_per,tele_movil, direcc_per, correo_per, tele_local);
      return resultInsertPerson;
+
+}
+
+
+const consultaDataLavanderia = async()=>{
+    let resultConsultLavanderia=await modelLavanderia.consultLavanderiaDB();
+    return resultConsultLavanderia;
+
+ }
+
+const contrInsertDataLavanderia = async()=>{
+  let resultInsertLavanderia=await modelLavanderia.insertLavanderiaDB();
+  return resultInsertLavanderia;
 
 }
 
@@ -58,5 +72,7 @@ module.exports={
     dataPet,
     consultaData,
     sirveJson,
-    contrInsertDataPer
+    contrInsertDataPer,
+    contrInsertDataLavanderia,
+    consultaDataLavanderia    
 }
