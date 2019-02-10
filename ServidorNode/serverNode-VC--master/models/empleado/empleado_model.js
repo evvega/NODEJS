@@ -139,7 +139,7 @@ const mysql = require ("mysql");
 let insertEmpleadoDB=(nombre, apellido, edad_per, tele_movil, direcc_per, correo_per, tele_local, horario_em, tipo_contrato_em, salario_em, fecha_ingreso_em, cargo_em)=>{
    return new Promise ((resolve,reject)=>{
     console.log("aca estoy");
-    var sql = "INSERT INTO Persona (nombres, apellidos, edad, telefono_movil, direccion, correo, telefono_local,horario, tipo_contrato, salario, fecha_ingreso, cargo) VALUES('" + nombre + "', '" +  apellido + "', '"+ edad_per +"', '"+ tele_movil +"', '"+ direcc_per +"', '"+
+    var sql = "INSERT INTO Empleado (nombres, apellidos, edad, telefono_movil, direccion, correo, telefono_local,horario, tipo_contrato, salario, fecha_ingreso, cargo) VALUES('" + nombre + "', '" +  apellido + "', '"+ edad_per +"', '"+ tele_movil +"', '"+ direcc_per +"', '"+
      correo_per +"', '"+ tele_local +"', '"+ horario_em +"', '"+ tipo_contrato_em +"', '"+ salario_em +"', '"+ fecha_ingreso_em +"', '"+ cargo_em +"')";
    
     con.query(sql, (err)=> {

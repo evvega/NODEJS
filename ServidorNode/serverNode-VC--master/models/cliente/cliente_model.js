@@ -1,6 +1,6 @@
 import Persona from "../persona/persona_model";
 
-class Repartidor extends Persona{
+class Cliente extends Persona{
     constructor(nombres, apellidos, edad, telefono_movil, direccion, correo, telefono_local, medio_pago, numero_tarjeta, 
         codigo_csc, estado){ 
             super(nombres, apellidos, edad, telefono_movil, direccion, correo, telefono_local);
@@ -121,7 +121,7 @@ const mysql = require ("mysql");
 let insertClienteDB=(nombre, apellido,edad_per,tele_movil, direcc_per, correo_per, tele_local,pago_medio, numero_tj,codigo, estado)=>{
    return new Promise ((resolve,reject)=>{
     console.log("aca estoy");
-    var sql = "INSERT INTO Repartidor (nombres, apellidos, edad, "
+    var sql = "INSERT INTO Cliente (nombres, apellidos, edad, "
         "telefono_movil, direccion, correo, telefono_local, medio_pago, numero_tarjeta,codigo_csc, estado ) VALUES('" + nombre + 
     "', '" +  apellido + "', '"+ edad_per +"', '"+ tele_movil +"', '"+ direcc_per +"', '"+ correo_per +"', '"+ tele_local +"', '"+ pago_medio +"', '"+ numero_tj 
     +"', '"+ codigo +"', '"+ estado+"')";
