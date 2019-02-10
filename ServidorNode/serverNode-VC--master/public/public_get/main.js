@@ -16,7 +16,7 @@ $(document).ready(function(){
     // se guarda en la variable field, por tanto es un objeto de javascript el nombre se obtiene así: field.Nombre_Persona
       $("#elementShowData").show() 
       $(".card-header").show()
-      $("#ul-dataItem").append(`<li class='list-group-item' id='itemData'> nombre:${field.Nombre_Persona} -  codigo:${field.Codigo_Persona} </li>`);
+      $("#ul-dataItem").append(`<li class='list-group-item' id='itemData'> NOMBRE:${field.nombres} -  APELLIDO:${field.apellidos} - CORREO: ${field.correo} - EDAD:${field.edad}</li>`);
       // Con esto lo que se hace es colocarle un hijo al elemento con el id: #ul-dataItem, recordar clases de DOM. 
     }); 
    

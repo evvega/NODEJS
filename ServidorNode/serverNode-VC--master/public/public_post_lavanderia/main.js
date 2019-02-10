@@ -11,8 +11,8 @@ $(document).ready(function(){
         var longitud=document.getElementById("longitud").value
         var horario=document.getElementById("horario").value
 
-        $.post( "http://localhost:3000/tryPostLava", {nit_lav: nit, razon_social_lav: razon_social, direccion_lav:direccion, 
-        telefono_lav:telefono,latitud_lav:latitud,longitud_lav:longitud, horario_lav:horario} );
+        $.post( "http://localhost:3000/tryPostLava", {nit: nit, razon_social: razon_social, direccion:direccion, 
+        telefono:telefono,latitud:latitud,longitud:longitud, horario:horario} );
       });
   });
   

@@ -75,13 +75,18 @@
 
 }
 
+
 const con =require("../database")
 const mysql = require ("mysql");
 
+
 let insertPersonDB=(nombre, apellido,edad_per,tele_movil, direcc_per, correo_per, tele_local)=>{
    return new Promise ((resolve,reject)=>{
-       var sql = "INSERT INTO Persona (nombres,apellidos, edad, telefono_movil, direccion, correo, telefono_local) VALUES('" + nombre + "', '" +  apellido + "', '"+ edad_per +"', '"+ tele_movil +"', '"+ direcc_per +"', '"+ correo_per +"', '"+ tele_local +"')";
-       con.query(sql, (err)=> {
+    console.log("aca estoy");
+    var sql = "INSERT INTO Persona (nombres, apellidos, edad, telefono_movil, direccion, correo, telefono_local) VALUES('" + nombre + "', '" +  apellido + "', '"+ edad_per +"', '"+ tele_movil +"', '"+ direcc_per +"', '"+ correo_per +"', '"+ tele_local +"')";
+   
+    con.query(sql, (err)=> {
+
            if (err){reject(`you was a problem **Nombre:${nombre}- Apellido:${apellido}**`);}
            resolve(`****The data: Nombre:${nombre}- Apellido:${apellido},  was inserted ****`);
        
@@ -92,6 +97,7 @@ let insertPersonDB=(nombre, apellido,edad_per,tele_movil, direcc_per, correo_per
 }
 
 
+
 let deletePersonDB=(nombres)=>{
 
 
@@ -100,7 +106,8 @@ let deletePersonDB=(nombres)=>{
 
 let consultPersonDB=()=>{
     return new Promise((resolve,reject)=>{
-    con.query("SELECT * FROM Personas", function (err, result, fields) {
+    con.query("SELECT * FROM Persona", function (err, result, fields) {
+        console.log("Hola casaa");
         if (err) {reject("you was a problem with the consult")}
         resolve (result)
       });

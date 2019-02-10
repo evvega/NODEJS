@@ -27,9 +27,10 @@ router.get('/consultarDB', (req,res,next)=>{
 
 router.post('/tryPost',(req,res,next)=>{
     console.log(req);
+
     controllers.contrInsertDataPer(req.body.nombre, req.body.apellido, req.body.edad_per, req.body.tele_movil,
-        req.body.direcc_per, req.body.correo_per, req.body.tele_local).then(result=>{
-        console.log(result)
+        req.body.direcc_per, req.body.correo_per, req.body.tele_local).then(result=>{    
+                
     }).catch(err=>{
         console.log(err)
     })

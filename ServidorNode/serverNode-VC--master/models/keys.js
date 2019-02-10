@@ -1,8 +1,8 @@
 databaseData={
-      host: "199.79.62.144",
-      user: "ingnovat_stiven",
-      password: "#Ing2017",
-      database: "ingnovat_prueba"
+      host: "127.0.0.1",
+      user: "root",
+      password: "",
+      database: "kong_lavanderia"
 }
 
 module.exports=databaseData;

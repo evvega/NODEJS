@@ -59,9 +59,17 @@ appServer.use('/links',routesIndex)
 
 appServer.use(express.static(path.join(__dirname,'public')));
 appServer.use('/index/public',express.static(path.join(__dirname,'public')));
-appServer.use('/public/post',express.static(path.join(__dirname,'public/public_post')));
+appServer.use('/public/post_persona',express.static(path.join(__dirname,'public/public_post')));
 appServer.use('/public/get',express.static(path.join(__dirname,'public/public_get')));
 appServer.use('/public/post_lavanderia',express.static(path.join(__dirname,'public/public_post_lavanderia')));
+appServer.use('/public/post_cliente',express.static(path.join(__dirname,'public/public_post_cliente')));
+appServer.use('/public/post_empleado',express.static(path.join(__dirname,'public/public_post_empleado')));
+appServer.use('/public/post_prenda',express.static(path.join(__dirname,'public/public_post_prenda')));
+appServer.use('/public/post_repartidor',express.static(path.join(__dirname,'public/public_post_repartidor')));
+appServer.use('/public/post_traza',express.static(path.join(__dirname,'public/public_post_traza')));
+
+
+
 //*********************When not find the file ************************ */
 
 appServer.get('*',function(req,res){
